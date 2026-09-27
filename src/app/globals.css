@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0d10;
+  --color-panel: #12151a;
+  --color-line: #232830;
+  --color-accent: #ccff00;
+  --color-muted: #8b93a0;
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { background: var(--color-bg); color: #f2f4f7; font-family: var(--font-sans); }
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-bold uppercase tracking-wide transition disabled:cursor-not-allowed disabled:opacity-40; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-black transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40; }
+  .btn-outline { @apply inline-flex items-center justify-center gap-2 rounded-md border border-muted/50 px-5 py-2.5 text-sm font-bold uppercase tracking-wide transition hover:border-accent hover:text-accent; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .animate-spin { animation: none; } }
